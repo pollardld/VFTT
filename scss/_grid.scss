@@ -1,0 +1,82 @@
+/*============================================
+  Grid
+=============================================*/
+$columns: 12;
+$gutter-width: 3%;
+$column-width: (100 / $columns) - $gutter-width;
+$total-width: (($column-width + $gutter-width) * $columns);
+
+@mixin column ($x, $columns:$columns) {
+  display: inline;
+  float: left;
+  width: $total-width * (((($gutter-width + $column-width) * $x) - $gutter-width) / $total-width);
+  margin: 0 $total-width * (($gutter-width * .5) / $total-width);
+}
+
+@mixin push ($columns:$columns) {
+  margin: 0 0 0 $total-width * (($gutter-width * .5) / $total-width);
+}
+@mixin pull ($columns:$columns) {
+  margin: 0 $total-width * (($gutter-width * .5) / $total-width) 0 0;
+}
+@mixin pushpullwidth ($x, $columns:$columns) {
+  width: (($total-width - ((2 * ($gutter-width * .5)) + ((($columns / $x) - 2) * $gutter-width)))) / ($columns / $x); 
+}
+@mixin row($columns) { @include pushpullwidth($columns); }
+
+
+.span1 { @include column(12) }
+.span2 { @include column(12) }
+.span3 { @include column(12) }
+.span4 { @include column(12) }
+.span5 { @include column(12) }
+.span6 { @include column(12) }
+.span7 { @include column(12) }
+.span8 { @include column(12) }
+.span9 { @include column(12) }
+.span10 { @include column(12) }
+.span11 { @include column(12) }
+.span12 { @include column(12) }
+
+@media (min-width: 50em) { 
+
+	.span1 { @include column(1) }
+	.span2 { @include column(2) }
+	.span3 { @include column(4) }
+	.span4 { @include column(4) }
+	.span5 { @include column(4) }
+	.span6 { @include column(6) }
+	.span7 { @include column(8) }
+	.span8 { @include column(8) }
+	.span9 { @include column(8) }
+	.span10 { @include column(10) }
+	.span11 { @include column(11) }
+}
+
+@media (min-width: 60.1em) { 
+
+	.span3 { @include column(3) }
+	.span5 { @include column(5) }
+	.span7 { @include column(7) }
+	.span9 { @include column(9) }
+
+	.spread {
+	    &> .span1 { @include pushpullwidth(1); }
+	    &> .span2 { @include pushpullwidth(2); }
+	    &> .span3 { @include pushpullwidth(3); }
+	    &> .span4 { @include pushpullwidth(4); }
+	    &> .span5 { @include pushpullwidth(5); }
+	    &> .span6 { @include pushpullwidth(6); }
+	    &> .span7 { @include pushpullwidth(7); }
+	    &> .span8 { @include pushpullwidth(8); }
+	    &> .span9 { @include pushpullwidth(9); }
+	    &> .span10  { @include pushpullwidth(10); }
+	    &> .span11  { @include pushpullwidth(11); }
+	    &> .span12  { @include pushpullwidth(12); }
+		&> *[class*="span"] {
+			&:nth-of-type(1) { @include pull(); } 
+			&:last-child { @include push(); }
+		}
+	}
+
+}

@@ -1,0 +1,15 @@
+/*
+Theme Name:     View From The Topp
+Theme URI:      http://viewfromthetopp.com/
+Description:    Child theme for View From The Topp
+Author:         david pollard
+Author URI:     http://pollardld.com
+Version:        0.0.1
+*/
+
+@import url("../twentyfourteen/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+@import url("css/style.css")

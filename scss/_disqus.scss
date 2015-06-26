@@ -1,0 +1,32 @@
+#disqus {
+	height: 0;
+	overflow: hidden;
+	position: relative;
+
+	.disqus-comments {
+		background: $primaryColor;
+		position: relative;
+		margin-top: 10%;
+		width: 100%;
+		@include vendor-prefix (transition, .3s margin-top linear);
+	}
+}
+
+.target-fix {
+
+	&#disqus-target {
+		top: 40%;
+		right: 0;
+
+		&:target {
+
+			+ #disqus {
+				height: auto;
+
+				.disqus-comments {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}

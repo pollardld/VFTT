@@ -1,0 +1,30 @@
+.main {
+	padding-top: 110px;
+	
+	.instagram-content, .follow-span {
+		width: 47%;
+	}
+
+	.infinite {
+
+		.item {
+			width: 49%;
+		}
+
+		.the-look {
+			width: 97%;
+		}
+
+		.follow-links, .topp-links-sidebar {
+			margin: 0 25% $margin;
+			width: 50%;
+		}
+	}
+}
+
+.main .home .inspired-content, 
+.home .main .inspired-content, 
+.main .search .inspired-content, 
+.search .main .inspired-content {
+	width: 97%;
+}

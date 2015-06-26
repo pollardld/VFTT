@@ -1,0 +1,54 @@
+/*	======================================
+	Responsive while statement
+====================================	*/
+// starting media query
+$i: 20;
+
+// loop through responsive containers. 10% padding to window. End of while adds 10 for next query.
+@while $i < 60.1 {
+	
+	@media (min-width: #{$i}em) { 
+		
+		header, main, .main, .container {
+			max-width: $i * .9em;
+		}
+
+	}
+	
+	$i: $i + 10;
+}
+
+@media (min-width: 30em) {
+	
+	@import '30';
+
+}
+
+@media screen and (min-width: 30em) and (max-width: 50em) and (-webkit-min-device-pixel-ratio: 2),
+	screen and (min-width: 30em) and (max-width: 50em) and (min-device-pixel-ratio: 2),
+	screen and (min-width: 30em) and (max-width: 50em) and (min--moz-device-pixel-ratio: 2) 
+{
+
+	@import '30to50';
+
+}
+
+@media (min-width: 50em) {
+
+	@import '50';
+
+}
+
+/*	======================================
+	Max Width Overall (per design)
+====================================	*/
+
+@media (min-width: 64.625em) {
+
+	header, main, .main, .container {
+		max-width: 58.75em;
+	}
+
+	// Import 64em stylesheet
+	@import '64';
+}

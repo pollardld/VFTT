@@ -1,0 +1,22 @@
+/*	======================================
+	Header
+====================================	*/
+
+.mobilenav .topnav ul .menu-item-has-children {
+	
+	&:before {
+		right: 25px;
+	}
+	
+	&:after {
+		width: 90px;
+	}
+}
+
+.isotope .item img {
+	width: 100%;
+}
+
+.comments .social {
+	text-align: center;
+}

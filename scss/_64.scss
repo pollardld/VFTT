@@ -1,0 +1,56 @@
+.isotope {
+
+	.item {
+		margin: 0 1.5% 3%;
+		width: 30%;
+
+		&:nth-of-type(8n+2) {
+			clear: left;
+			width: 47%;
+		} 
+
+		&:nth-of-type(8n+3) {
+			width: 47%;
+		}
+	}
+
+  	.sizer {
+  		width: 30%;
+  	}
+}
+
+.page-template-page-obsessing-over-php, .single-obsessing_over {
+
+	.isotope {
+
+		.item {
+
+			&:nth-of-type(8n+1) {
+				clear: left;
+				width: 47%;
+			} 
+
+			&:nth-of-type(8n+2) {
+				clear: none;
+			}
+
+			&:nth-of-type(8n+3) {
+				width: 30%;
+			}
+		}
+
+		.initial-item {
+			margin: 0 15% $margin;
+			width: 70%;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.sidebar-content, .obsessing-over-sidebar, .sidebar-topp-tags, .sidebar-search {
+	@include column(9);
+	margin: 0 0 2rem;
+}

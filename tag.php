@@ -1,0 +1,53 @@
+<?php 
+/*
+* Template Name: Shop The Look
+*/
+get_header(); ?>
+
+	<div class="main spread">
+
+		<?php get_template_part( 'content', 'sidebar' ); ?>
+
+			<div class="span8">
+									
+				<section class="isotope" data-isotope-options="{ itemSelector: '.item' }">
+
+					<article class="sizer">&nbsp;</article>
+			
+					<?php while ( have_posts() ) : the_post(); ?>
+
+						<article class="item">
+
+							<?php $thePostType = get_post_type( get_the_ID() ); ?>
+
+							<?php if ( $thePostType == 'inspired_by' || $thePostType == 'obsessing_over' ) : ?>
+
+								<a href="<?php the_field('source'); ?>" target="_blank">
+									<?php the_post_thumbnail( 'featured-image'); ?>
+								</a>
+
+							<?php elseif ( $thePostType == 'topp_links' ) : ?>
+
+								<a href="<?php the_field( 'source' ); ?>" target="_blank">
+									<?php the_post_thumbnail( 'topp-link-thumb' ); ?>
+								</a>
+
+							<?php else : ?>
+
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail( 'featured-image'); ?>
+								</a>
+
+							<?php endif; ?>
+
+						</article>
+
+					<?php endwhile; ?>
+
+				</section>
+
+			</div>
+
+	</div>
+
+<?php get_footer();

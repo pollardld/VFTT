@@ -1,0 +1,58 @@
+@mixin vendor-prefix ($name, $argument) {
+    #{$name}: $argument;
+    -webkit-#{$name}: $argument;
+    -ms-#{$name}: $argument;
+    -moz-#{$name}: $argument;
+    -o-#{$name}: $argument;
+}
+
+@mixin clear() {
+	clear: both;
+  	&:before { content: ''; display: block; clear: both; overflow: hidden; position: relative; }
+}
+
+@mixin infinite-item() {
+	display: inline-block;
+	float: none;
+    margin: 0 0 $margin 0;
+    
+    @media (min-width: 50em) {
+        margin: 0 2% $margin 0;
+    }
+}
+
+@keyframes loading {
+    0% {
+        @include vendor-prefix(transform, rotate(0));
+    }
+    100% {
+        @include vendor-prefix(transform, rotate(360deg));
+    }
+}
+
+@-webkit-keyframes loading {
+    0% {
+        @include vendor-prefix(transform, rotate(0));
+    }
+    100% {
+        @include vendor-prefix(transform, rotate(360deg));
+    }
+}
+
+@keyframes loading-switch {
+    0% {
+        @include vendor-prefix(transform, rotate(0deg));
+    }
+    100% {
+        @include vendor-prefix(transform, rotate(-360deg));
+    }
+}
+
+@-webkit-keyframes loading-switch {
+    0% {
+        @include vendor-prefix(transform, rotate(0));
+    }
+    100% {
+        @include vendor-prefix(transform, rotate(-360deg));
+    }
+}
